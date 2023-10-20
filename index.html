@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.25.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.15.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.22.2"></script>
+</head>
+<body>
+  <div id="vis"/>
+  <script>
+    const spec = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://uiuc-ischool-dataviz.github.io/is445_spring2022/week03/data/building_inventory.csv"
+  },
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "Congress Dist", "type": "quantitative"},
+    "y": {"field": "Year Acquired", "type": "quantitative"}
+  },
+  "config": {}
+};
+    vegaEmbed("#vis", spec, {mode: "vega-lite"}).then(console.log).catch(console.warn);
+  </script>
+</body>
+</html>
